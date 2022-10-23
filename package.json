@@ -1,28 +1,21 @@
 {
-  "name": "bot",
+  "name": "testserver",
   "version": "1.0.0",
-  "description": "",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "startBot": "nodemon bot.js",
-    "startServer": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Yaroslav-Pa/Firstbot.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "server.js": "nodemon server.js",
+    "start-prod": "node index.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Yaroslav-Pa/Firstbot/issues"
-  },
-  "homepage": "https://github.com/Yaroslav-Pa/Firstbot#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "telegraf": "^4.9.2"
+    "mongoose": "^6.6.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": ""
 }
