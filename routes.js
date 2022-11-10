@@ -1,5 +1,5 @@
 const User = require("./models/UserModels"),
-  userController = require("./controllers/userController.js");
+  userController = require("./controlers/userControllers.js");
 
 module.exports = function (app) {
   /**
@@ -27,4 +27,7 @@ module.exports = function (app) {
   app.get("/user", userController.getListOfUsers);
   app.get("/user/:name", userController.getUsersByName);
   app.post("/user", userController.addUser);
+  app.delete("/user/:userId", userController.removeUser);
+  app.put("/user/:userId", userController.updateUser);
+  app.get("/user/user-by-age/:from/:to", userController.getUsersByAge);
 };

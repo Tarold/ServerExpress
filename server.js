@@ -1,13 +1,15 @@
 const express = require("express"),
   app = express(),
   port = process.env.port || 3000;
-(routes = require("./routes.js")),
+(bodyParser = require("body-parser")),
+  (routes = require("./routes.js")),
   (mongoose = require("mongoose")),
   (User = require("./models/UserModels"));
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
 
 mongoose.connect("mongodb://localhost/users_db");
+
 const swaggerOption = {
   swaggerDefinition: {
     info: {
@@ -24,7 +26,8 @@ const swaggerDocs = swaggerJsDoc(swaggerOption);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.use(express.json());
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
