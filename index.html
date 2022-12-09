@@ -1,0 +1,16 @@
+<script>
+  function counter() {
+    let a = 0;
+    return () => {
+      a++;
+      console.log('a', a);
+    };
+  }
+
+  let add = counter();
+
+  add();
+  add();
+  add();
+</script>
+<script src="homework.js"></script>
